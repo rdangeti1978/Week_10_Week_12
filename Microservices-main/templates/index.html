@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Wisconsin (Diagnostic) Application</title>
+    <style>
+        body {
+                 margin: 10px;
+                }
+
+        .heading1 {
+                 text-align: center;
+
+                }
+
+        .heading {
+                 text-shadow: #de5499;
+                }
+
+        .hmbtn {
+                float: right;
+
+                } 
+
+        .grid-container {
+                        display: grid;
+                        grid-template-columns: auto auto;
+                        gap: 10px;
+                        background-color: #de5499;
+                        padding: 5px;
+                        }
+
+        .grid-item {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border: 1px solid rgba(0, 0, 0, 0.8);
+                        text-align: left;
+                        padding: 1px;
+                        font-size: 15px;
+                        }
+
+        .btn {
+                border-color: #ff33ff !important;
+                color: #ffffff;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                background-color: #de5499 !important;
+                border-color: #de5499 !important;
+                padding: 5px;
+                font-size: medium;
+                }
+
+        .output {
+            background-color: #de5499;
+            text-align: left;
+            height: 30px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hmbtn">
+        <h4><button type="submit" class="btn"><a style="text-decoration: none; color: #ffffff;" href="{{url_for('home')}}">Home</a></button></h4>
+    </div>
+    <br>
+    <div class="heading1">
+        <h2 class="heading">Breast Cancer Wisconsin (Diagnostic) Application</h2>
+    </div>
+    <br>
+    <div class="grid-container">
+        <ol>
+        <div class="grid-item">
+            <li><a href="{{url_for('info1')}}"><span>Machine Learning (ML) Predictive Model Information And Version</span></a><span> : {{information}}</span></li>
+        </div>
+        <br>
+        <div class="grid-item">
+            <li><a href="{{url_for('health1')}}"><span>Machine Learning (ML) Predictive Model Health Service</span></a><span> : {{service}}</span></li>
+        </div>
+        <br>
+        <div class="grid-item">
+            <li><a href="{{url_for('manual')}}"><span>Machine Learning (ML) Predictive Model For Manual Dataset</span></a></li>
+        </div>
+        <br>
+        <div class="grid-item">
+            <li><a href="{{url_for('sample')}}"><span>Machine Learning (ML) Predictive Model For Sample Dataset</span></a></li>
+        </div>
+        </ol>
+    </div>
+ </body>
+</html>

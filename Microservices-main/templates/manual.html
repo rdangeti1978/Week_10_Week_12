@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Wisconsin (Diagnostic) Application</title>
+    <script>
+       function setSixNumberDecimal(event)
+       {
+        this.value = parseFloat(this.value).toFixed(6);
+       }
+    </script>
+    <style>
+        body {
+                 margin: 10px;
+                }
+
+        .heading1 {
+                 text-align: center;
+
+                }
+
+        .heading {
+                 text-shadow: #de5499;
+                }
+
+        .hmbtn {
+                float: right;
+
+                } 
+
+        .grid-container {
+                        display: grid;
+                        grid-template-columns: auto auto auto;
+                        gap: 10px;
+                        background-color: #de5499;
+                        padding: 5px;
+                        }
+
+        .grid-item {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border: 1px solid rgba(0, 0, 0, 0.8);
+                        text-align: left;
+                        padding: 5px;
+                        font-size: 15px;
+                        }
+
+        .btn {
+                border-color: #ff33ff !important;
+                color: #ffffff;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                background-color: #de5499 !important;
+                border-color: #de5499 !important;
+                padding: 5px;
+                font-size: medium;
+                }
+
+        label {
+                text-align: left;
+                width: 40%;
+                }
+
+        input {
+                text-align: left;
+                width: 35%;
+                }
+        
+        .output {
+            background-color: #de5499;
+            text-align: left;
+            height: 20px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hmbtn">
+        <h4><button type="submit" class="btn"><a style="text-decoration: none; color: #ffffff;" href="{{url_for('home')}}">Home</a></button></h4>
+    </div>
+    <br>
+    <div class="heading1">
+        <h2 class="heading">Breast Cancer Wisconsin (Diagnostic) Application</h2>
+    </div>
+    <br>
+    <form action="{{url_for('diagnostic')}}" name="form", method="POST", style="text-align: center;">
+        <div class="grid-container">
+        <div class="grid-item">
+        <label class="lbl">Radius_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="radius_mean" placeholder="Ex: 20.94" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Texture_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="texture_mean" placeholder="Ex: 23.56" required="required"/>
+        </div>   
+        <div class="grid-item">
+        <label>Perimeter_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="perimeter_mean" placeholder="Ex: 138.9" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Area_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="area_mean" placeholder="Ex: 1364" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Smoothness_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="smoothness_mean" placeholder="Ex: 0.1007" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Compactness_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="compactness_mean" placeholder="EX: 0.1606" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Concavity_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concavity_mean" placeholder="Ex: 0.2712" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Concave points_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concave points_mean" placeholder="Ex: 0.131" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Symmetry_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="symmetry_mean" placeholder="Ex: 0.2205" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Fractal_dimension_mean:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="fractal_dimension_mean" placeholder="Ex: 0.05898" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Radius_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="radius_se" placeholder="Ex: 1.004" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Texture_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="texture_se" placeholder="Ex: 0.8208" required="required"/>
+        </div>
+        <div class="grid-item">  
+        <label>Perimeter_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="perimeter_se" placeholder="Ex: 6.372" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Area_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="area_se" placeholder="Ex: 137.9" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Smoothness_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="smoothness_se" placeholder="Ex: 0.005283" required="required"/>
+        </div>    
+        <div class="grid-item">
+        <label>Compactness_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="compactness_se" placeholder="Ex: 0.03908" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Concavity_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concavity_se" placeholder="Ex: 0.09518" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Concave points_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concave points_se" placeholder="Ex: 0.01864" required="required"/>
+        </div>
+        <div class="grid-item">   
+        <label>Symmetry_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="symmetry_se" placeholder="Ex: 0.02401" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Fractal_dimension_se:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="fractal_dimension_se" placeholder="Ex: 0.005002" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Radius_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="radius_worst" placeholder="Ex: 25.58" required="required"/>
+        </div>    
+        <div class="grid-item">   
+        <label>Texture_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="texture_worst" placeholder="Ex: 27" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Perimeter_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="perimeter_worst" placeholder="Ex: 165.3" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Area_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="area_worst" placeholder="Ex: 2010" required="required"/>
+        </div>
+        <div class="grid-item">   
+        <label>Smoothness_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="smoothness_worst" placeholder="Ex: 0.1211" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Compactness_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="compactness_worst" placeholder="Ex: 0.3172" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Concavity_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concavity_worst" placeholder="Ex: 0.6991" required="required"/>
+        </div>    
+        <div class="grid-item">        
+        <label>Concave points_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="concave points_worst" placeholder="Ex: 0.2105" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Symmetry_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="symmetry_worst" placeholder="Ex: 0.3126" required="required"/>
+        </div>
+        <div class="grid-item">
+        <label>Fractal_dimension_worst:</label>
+        <input type="number" onchange="setSixNumberDecimal" step="0.000001" name="fractal_dimension_worst" placeholder="Ex: 0.07849" required="required"/>
+        </div>
+        <div class="grid-item">
+        <button type="submit" class="btn">Predict Cancer</button>
+        </div>
+    </div>
+    </form> 
+    <div>
+    <h3 class="output">{{output}}</h3> 
+    </div> 
+</body>
+</html> 

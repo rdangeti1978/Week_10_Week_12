@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Wisconsin (Diagnostic) Application</title>
+    <style>
+        body {
+                 margin: 10px;
+                }
+
+        .heading1 {
+                 text-align: center;
+
+                }
+
+        .heading {
+                 text-shadow: #de5499;
+                }
+
+        .hmbtn {
+                float: right;
+
+                } 
+
+        .grid-container {
+                        display: grid;
+                        grid-template-columns: auto;
+                        gap: 10px;
+                        background-color: #de5499;
+                        padding: 5px;
+                        }
+
+        .grid-item {
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border: 1px solid rgba(0, 0, 0, 0.8);
+                        text-align: left;
+                        padding: 5px;
+                        font-size: 15px;
+                        }
+
+        .btn {
+                border-color: #ff33ff !important;
+                color: #ffffff;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+                background-color: #de5499 !important;
+                border-color: #de5499 !important;
+                padding: 5px;
+                font-size: medium;
+                }
+        
+        .output {
+            background-color: #de5499;
+            text-align: left;
+            height: 20px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hmbtn">
+        <h4><button type="submit" class="btn"><a style="text-decoration: none; color: #ffffff;" href="{{url_for('home')}}">Home</a></button></h4>
+    </div>
+    <br>
+    <div class="heading1">
+        <h2 class="heading">Breast Cancer Wisconsin (Diagnostic) Application</h2>
+    </div>
+    <br>
+<div class="grid-container">
+    <div class="grid-item">
+        <h4><a href="{{url_for('jsnpredict')}}">Prediction For Sample Dataset 1 :</a></h4>
+        <p>{"radius_mean": 17.99, "texture_mean": 10.38, "perimeter_mean": 122.8, "area_mean": 1001.0, "smoothness_mean": 0.1184, "compactness_mean": 0.2776, "concavity_mean": 0.3001, "concave points_mean": 0.1471, "symmetry_mean": 0.2419, "fractal_dimension_mean": 0.07871, "radius_se": 1.095, "texture_se": 0.9053, "perimeter_se": 8.589, "area_se": 153.4, "smoothness_se": 0.006399, "compactness_se": 0.04904, "concavity_se": 0.05373, "concave points_se": 0.01587, "symmetry_se": 0.03003, "fractal_dimension_se": 0.006193, "radius_worst": 25.38, "texture_worst": 17.33, "perimeter_worst": 184.6, "area_worst": 2019.0, "smoothness_worst": 0.1622, "compactness_worst": 0.6656, "concavity_worst": 0.7119, "concave points_worst": 0.2654, "symmetry_worst": 0.4601, "fractal_dimension_worst": 0.1189}</p>
+        <h4 class="output">{{result1}}</h4>
+    </div>
+    <div class="grid-item">
+        <h4><a href="{{url_for('jsnpredict1')}}">Prediction For Sample Dataset 2 :</a></h4>
+        <p>{"radius_mean": 13.54, "texture_mean": 14.36, "perimeter_mean": 87.46, "area_mean": 566.3, "smoothness_mean": 0.09779, "compactness_mean": 0.08129, "concavity_mean": 0.06664, "concave points_mean": 0.04781, "symmetry_mean": 0.1885, "fractal_dimension_mean": 0.05766, "radius_se": 0.2699, "texture_se": 0.7886, "perimeter_se": 2.058, "area_se": 23.56, "smoothness_se": 0.008462, "compactness_se": 0.0146, "concavity_se": 0.02387, "concave points_se": 0.01315, "symmetry_se": 0.0198, "fractal_dimension_se": 0.0023, "radius_worst": 15.11, "texture_worst": 19.26, "perimeter_worst": 99.7, "area_worst": 711.2, "smoothness_worst": 0.144, "compactness_worst": 0.1773, "concavity_worst": 0.239, "concave points_worst": 0.1288, "symmetry_worst": 0.2977, "fractal_dimension_worst": 0.07259}</p>
+        <h4 class="output">{{result2}}</h4>
+    </div>
+</div>
+</body>
+</html>
