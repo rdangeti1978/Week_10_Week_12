@@ -18,6 +18,9 @@ model_name = "Breast Cancer Wisconsin (Diagnostic) Application"
 model_file = 'model_binary.dat.gz'
 version = "v1.0.0"
 
+
+
+
 app = Flask(__name__)
 model = joblib.load('model/model_binary.dat.gz')
 
