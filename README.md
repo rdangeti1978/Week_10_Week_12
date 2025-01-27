@@ -2,6 +2,8 @@
 
 Breast Cancer Detection Web Application
 
+#To test
+
 # Dataset
 Breast Cancer Wisconsin (Diagnostic) Data Set
 
@@ -48,10 +50,10 @@ Test web application by running:
 '$ flask run -p 5000'
 
 Test web application related info/health/predict of model on ubuntu terminal:
-Please refer syntax from tests/example_calls.txt file  
+Please refer syntax from tests/example_calls.txt file
 
 Test web application on browser by running:
-'http://127.0.0.1:5000/' 
+'http://127.0.0.1:5000/'
 
 1. Machine Learning (ML) Predictive Model Information And Version:
 'http://127.0.0.1:5000/info1'
